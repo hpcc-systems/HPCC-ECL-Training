@@ -19,7 +19,7 @@ crossTabLayout := RECORD
    totalFare := SUM(GROUP, ds.fare);
    varianceFare := VARIANCE(GROUP, ds.fare);
    coVarianceFareDist := COVARIANCE(GROUP, ds.fare, ds.distance);
-   correlateDist := CORRELATION(GROUP, ds.fare, ds.distance);
+   correlateFareDist := CORRELATION(GROUP, ds.fare, ds.distance);
 END;
 
 crossTabDs := TABLE(ds, crossTabLayout, pickup_date);
