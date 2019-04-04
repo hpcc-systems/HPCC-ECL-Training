@@ -1,0 +1,22 @@
+Layout := RECORD
+    STRING10 pickup_date;
+    DECIMAL8_2 fare;
+    DECIMAL8_2 distance;
+END;
+
+ds := DATASET([{'2015-01-01', 25.10, 5},
+               {'2015-01-01', 40.15, 8},
+               {'2015-01-02', 30.10, 6},
+               {'2015-01-02', 25.15, 4}], Layout);
+
+//Filter records by fields
+filterDs :=  ds(pickup_date='2015-01-01');
+//Remove duplicate records
+dedupDs := DEDUP(SORT(ds, pickup_date), pickup_date);
+//Return the top N records after sorting
+topDs := TOPN(ds, 2, pickup_date);
+
+
+OUTPUT(filterDs);
+OUTPUT(dedupDs);
+OUTPUT(topDs);
