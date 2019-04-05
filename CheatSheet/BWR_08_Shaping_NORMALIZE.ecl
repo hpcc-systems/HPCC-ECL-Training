@@ -20,5 +20,6 @@ wordDs := NORMALIZE(inputDs,
               STD.Str.WordCount(LEFT.passenger_state),
               TRANSFORM(OutputLayout, 
                         SELF.ride_id := LEFT.ride_id, 
-                        SELF.word := STD.Str.ToUpperCase(STD.Str.GetNthWord(LEFT.passenger_state, COUNTER))));     
+                        SELF.word := STD.Str.ToUpperCase(
+                            STD.Str.GetNthWord(LEFT.passenger_state, COUNTER))));     
 OUTPUT(wordDs);       
