@@ -1,6 +1,8 @@
-//**** Group Data
-
-//ECL provides functions to aggregate grouped data
+/* Group Data */
+/*
+    Easily work with cross tab functionality
+    by using GROUP and TABLE functions
+*/
 
 Layout := RECORD
     STRING10 pickup_date;
@@ -24,3 +26,5 @@ END;
 
 crossTabDs := TABLE(ds, crossTabLayout, pickup_date);
 OUTPUT(crossTabDs);
+
+
