@@ -1,2 +1,2 @@
 ![](img/CheatSheet/CheatSheet.001.jpeg)
-![](img/CheatSheet/Slide2.jpeg)
+![](img/CheatSheet/CheatSheet.002.jpeg)
