@@ -1,0 +1,1 @@
+![](img/CheatSheet/Slide1.jpeg)

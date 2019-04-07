@@ -1,5 +1,10 @@
-//**** Summarize Data
-
+/* Summarize Data */
+/* 
+   Provides a large set of functions to 
+   summarize values in a dataset. You
+   can also use the functions in combination 
+   with GROUP and TABLE to create Pivots
+*/
 Layout := RECORD
     STRING pickup_dt;
     DECIMAL8_2 fare;
@@ -21,3 +26,5 @@ OUTPUT(DATASET([{'sum',sumVal},
                 {'max', maxVal}, 
                 {'count', countVal}], 
                 {String typ, DECIMAL8_2 val}));
+
+

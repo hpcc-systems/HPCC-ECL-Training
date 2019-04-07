@@ -1,5 +1,9 @@
-//**** Syntax - Creating Datasets
-
+/* A DATASET */
+/* 
+   A in-memory representation of data on 
+   disk or created in memory. Most ECL functions
+   return a DATASET
+*/
 Layout := RECORD
     STRING pickup_dt;
     DECIMAL8_2 fare;
@@ -12,6 +16,10 @@ memDs := DATASET([{'2015-01-01 01:08:56', 25.10},
 OUTPUT(memDs);
 
 //Reading CSV file data
-fileDs := DATASET('~tutorials::cheatsheet::in::sample_trip_1.csv', Layout, CSV);
+fileDs := DATASET(
+          '~tutorials::cheatsheet::in::sample_trip_1.csv', 
+          Layout, CSV);
 
 OUTPUT(fileDs);
+
+
