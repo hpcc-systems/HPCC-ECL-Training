@@ -1,3 +1,10 @@
+/* Shaping with PROJECT */
+
+/*
+   Used when transforming a dataset to another 
+   dataset with the same number of records but 
+   transformed columns
+*/
 IMPORT Std;
 
 InputLayout := RECORD
@@ -20,8 +27,10 @@ inputDs := DATASET([{'2015-01-01 10:00:00', 25.10, 5},
 
 
 outputDs := PROJECT(inputDs, TRANSFORM(OutputLayout,
-                              SELF.pickup_date := Std.Date.FromStringToDate(LEFT.pickup_datetime[..10], '%Y-%m-%d'),
-                              SELF.pickup_time := Std.Date.FromStringToTime(LEFT.pickup_datetime[12..], '%H:%M:%S'),
-                              SELF.fare := LEFT.fare,   
-                              SELF.distance := LEFT.distance));   
+   SELF.pickup_date := Std.Date.FromStringToDate(LEFT.pickup_datetime[..10], '%Y-%m-%d'),
+   SELF.pickup_time := Std.Date.FromStringToTime(LEFT.pickup_datetime[12..], '%H:%M:%S'),
+   SELF.fare := LEFT.fare,   
+   SELF.distance := LEFT.distance));   
 OUTPUT(outputDs);
+
+
