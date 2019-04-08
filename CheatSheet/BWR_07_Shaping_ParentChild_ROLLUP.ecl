@@ -1,3 +1,5 @@
+/* Parent Child record relations with ROLLUP */
+/* Rolllup records into a parent child layout */
 InputLayout := RECORD
     STRING10 pickup_date;
     DECIMAL8_2 fare;
@@ -20,4 +22,7 @@ tempDs := ROLLUP(groupDs, GROUP, TRANSFORM(OutputLayout,
                                            SELF.pickup_date := LEFT.pickup_date,
                                            SELF.trips := ROWS(LEFT)));    
 
-OUTPUT(tempDs);                                                      
+OUTPUT(tempDs);    
+
+
+    
