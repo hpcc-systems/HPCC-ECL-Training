@@ -3,3 +3,7 @@
 ![](img/CheatSheet/CheatSheet.003.jpeg)
 ![](img/CheatSheet/CheatSheet.004.jpeg)
 ![](img/CheatSheet/CheatSheet.005.jpeg)
+![](img/CheatSheet/CheatSheet.006.jpeg)
+![](img/CheatSheet/CheatSheet.007.jpeg)
+![](img/CheatSheet/CheatSheet.008.jpeg)
+![](img/CheatSheet/CheatSheet.009.jpeg)
