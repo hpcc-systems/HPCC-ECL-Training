@@ -1,4 +1,8 @@
-//NORMALIZE is used to breakdown a single record into multiple records
+/* NORMALIZE */
+/*
+  Break the contents of a record into
+  normal form
+*/
 IMPORT Std;
 
 InputLayout := RECORD
@@ -23,3 +27,5 @@ wordDs := NORMALIZE(inputDs,
                         SELF.word := STD.Str.ToUpperCase(
                             STD.Str.GetNthWord(LEFT.passenger_state, COUNTER))));     
 OUTPUT(wordDs);       
+
+
