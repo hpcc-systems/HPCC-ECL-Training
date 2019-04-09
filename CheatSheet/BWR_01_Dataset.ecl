@@ -1,6 +1,6 @@
 /* A DATASET */
 /* 
-   A in-memory representation of data on 
+   A representation of data on 
    disk or created in memory. Most ECL functions
    return a DATASET
 */
