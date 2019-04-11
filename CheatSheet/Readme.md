@@ -7,3 +7,4 @@
 ![](img/CheatSheet/CheatSheet.007.jpeg)
 ![](img/CheatSheet/CheatSheet.008.jpeg)
 ![](img/CheatSheet/CheatSheet.009.jpeg)
+![](img/CheatSheet/CheatSheet.010.jpeg)
