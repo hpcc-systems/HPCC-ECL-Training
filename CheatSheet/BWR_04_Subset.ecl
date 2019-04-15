@@ -1,3 +1,9 @@
+/* Observe Subset */
+/*
+    Select a subset of rows in a 
+    dataset for observation
+*/
+
 Layout := RECORD
     STRING10 pickup_date;
     DECIMAL8_2 fare;
@@ -27,3 +33,4 @@ OUTPUT(dedupDs);
 OUTPUT(topDs);
 OUTPUT(sampleDs);
 OUTPUT(enthDs);
+

@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Play-Thor",
             "type": "ecl",
@@ -15,7 +16,7 @@
             "serverAddress": "play.hpccsystems.com",
             "port": 8010,
             "rejectUnauthorized": false,
-            "targetCluster": "hthor",
+            "targetCluster": "thor",
             "eclccPath": "${config:ecl.eclccPath}",
             "eclccArgs": [],
             "includeFolders": "${config:ecl.includeFolders}",
