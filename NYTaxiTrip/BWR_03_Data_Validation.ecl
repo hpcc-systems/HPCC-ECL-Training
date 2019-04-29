@@ -1,11 +1,12 @@
-IMPORT NYTaxiTrip.Files;
-IMPORT Files.Taxi_Weather;
-IMPORT NYTaxiTrip.Utils;
-
-
 #WORKUNIT('NAME', '3_Data_Validation');
 
 //Data Validation:
-d := taxi_weather.ds.raw;
-taxi_weather_valid := Utils.Validation(d);//244,793,571
-OUTPUT(taxi_weather_valid ,,Taxi_Weather.Paths.validate, OVERWRITE); //56,704,772
+Layout := RECORD
+    INTEGER id;
+    REAL8   precipitation;
+    INTEGER trend;
+
+END;
+raw := DATASET('~trainset', Layout, CSV(HEADING(1)));
+validset := raw( precipitation >=0 AND precipitation <=1 );
+OUTPUT(validset );
