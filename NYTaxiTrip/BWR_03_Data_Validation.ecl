@@ -1,12 +1,15 @@
+IMPORT STD;
+
 #WORKUNIT('NAME', '3_Data_Validation');
 
-//Data Validation:
+//Reading Taxi_Weather Data
 Layout := RECORD
-    INTEGER id;
-    REAL8   precipitation;
-    INTEGER trend;
-
+  STD.Date.Date_t date;
+  REAL8 precipintensity;
+  INTEGER trip_counts;
 END;
-raw := DATASET('~trainset', Layout, CSV(HEADING(1)));
-validset := raw( precipitation >=0 AND precipitation <=1 );
-OUTPUT(validset );
+raw := DATASET('~thor::taxi::traindata', Layout, THOR);
+
+//Data Validation: valide
+validSet := raw( date >= 20000101 AND date <=20190501 );
+OUTPUT(validSet);

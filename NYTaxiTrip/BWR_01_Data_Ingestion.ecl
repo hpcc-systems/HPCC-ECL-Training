@@ -1,11 +1,12 @@
-#WORKUNIT('NAME', '1_Data_Ingestion');
+IMPORT STD;
 
+#WORKUNIT('NAME', '1_Data_Ingestion');
 //Reading Taxi_Weather Data
 Layout := RECORD
-    INTEGER id;
-    REAL8   precipitation;
-    INTEGER trend;
-
+  STD.Date.Date_t date;
+  REAL8 precipintensity;
+  INTEGER trip_counts;
 END;
-raw := DATASET('~trainset', Layout, CSV(HEADING(1)));
+
+raw := DATASET('~thor::taxi::traindata', Layout, THOR);
 OUTPUT(raw);
