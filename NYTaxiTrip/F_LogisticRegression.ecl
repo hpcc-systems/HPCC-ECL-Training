@@ -1,35 +1,16 @@
 IMPORT STD;
 IMPORT ML_Core;
 IMPORT ML_Core.Types;
+IMPORT NYTaxiTrip.D_Data_Enhancement;
 IMPORT LogisticRegression AS LR;
 
-#WORKUNIT('NAME', '4_LogisticRegression');
+//Reading enhanced data
+enhancedData := D_Data_Enhancement.enhancedData;
 
-//Reading Taxi_Weather Data
-Layout := RECORD
-  STD.Date.Date_t date;
-  REAL8 precipintensity;
-  INTEGER trip_counts;
-END;
-raw := DATASET('~thor::taxi::traindata', Layout, THOR);
 
-//Enhance raw data
-enhancedLayout := RECORD
-  INTEGER id;
-  INTEGER month_of_year;
-  INTEGER day_of_week;
-  REAL8   precipintensity;
-  INTEGER trip_counts;
-END;
-
-enhancedData := PROJECT(raw, TRANSFORM(enhancedLayout,
-                                        SELF.id := COUNTER,
-                                        SELF.day_of_week := (INTEGER) Std.Date.DayOfWeek(LEFT.date),
-                                        SELF.month_of_year := (INTEGER) LEFT.date[5..6],
-                                        SELF.precipintensity := LEFT.precipintensity,
-                                        SELF.trip_counts := LEFT.trip_counts));
-
+//Average trips per day
 avgTrip := AVE(enhancedData, trip_counts);
+
 //Add trend layout
 trainLayout := RECORD
   INTEGER id;
