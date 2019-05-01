@@ -26,13 +26,13 @@ trainData := PROJECT(enhancedData, TRANSFORM(trainLayout,
 //Transform to Machine Learning Dataframe, such as NumericField
 ML_Core.ToField(trainData, NFtrain);
 
-// split into input (X) and output (Y) variables
-X := NFtrain(number < 4);
-Y := PROJECT(NFtrain(number = 4), TRANSFORM(Types.DiscreteField, SELF.number := 1, SELF := LEFT));
+//Independent and Dependent data
+DStrainInd := NFtrain(number < 4);
+DStrainDpt := PROJECT(NFtrain(number = 4), TRANSFORM(Types.DiscreteField, SELF.number := 1, SELF := LEFT));
 
 //Training LogisticRegression Model
-mod_bi := LR.BinomialLogisticRegression(100,0.00001).getModel(X, Y);
+mod_bi := LR.BinomialLogisticRegression(100,0.00001).getModel(DStrainInd, DStrainDpt);
 
 //Prediction
-predict_bi := LR.BinomialLogisticRegression().Classify(mod_bi, X);
+predict_bi := LR.BinomialLogisticRegression().Classify(mod_bi, DStrainInd);
 OUTPUT(predict_bi);
