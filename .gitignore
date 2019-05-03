@@ -1,3 +1,6 @@
 eclcc.log
 CheatSheet/ppt/~$CheatSheet.pptx
 .DS_Store
+.eclcc/metacache/visualizer.cache
+.eclcc/metacache/cheatsheet/bwr_z02_visualize.cache
+.eclcc/metacache/std/bundlebase.cache
