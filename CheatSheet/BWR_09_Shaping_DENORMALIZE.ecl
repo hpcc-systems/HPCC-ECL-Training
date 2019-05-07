@@ -2,7 +2,7 @@
 /* Combine data from two normalized Datasets */   
 WeatherLayout := RECORD 
     STRING10 weather_date;
-    UNSIGNED hour_of_day;
+    UNSIGNED hour;
     DECIMAL8_2 rain_quantity;
 END;
 TripLayout := RECORD
